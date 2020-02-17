@@ -36,11 +36,12 @@ public class CreateUser {
 	         		answer = stmt.executeUpdate("INSERT INTO customer (user_name, password)" + " VALUES ('"+userName+"','"+passWord+"')");
 			     if (answer == 1) {
 			     System.out.println("User Account created.");   
-			     }	
+			     }else 
+			    	 System.out.println("fail to create new user account !!!");   
 		     } conn.close();
+		     
 	     }            
 	    catch (SQLException ex) {
-	    	ex.printStackTrace();
 	    }
 	 }
 	    

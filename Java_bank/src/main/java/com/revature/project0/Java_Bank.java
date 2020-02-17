@@ -9,10 +9,16 @@ public class Java_Bank {
 		Scanner console = new Scanner(System.in);
 		String userName ;
 		String passWord;
+		String setAccountType = " ";
+		int choice;
 		Menu me = new Menu ();
-		User user = new User ();
+		//User user = new User ();
 		CreateUser cruser = new CreateUser ();
 		UserValidation uv = new UserValidation ();
+		NewAccount na = new NewAccount ();
+		AddJointOwnerToAccount ao = new AddJointOwnerToAccount ();
+		CloseAccount clacct = new CloseAccount ();
+		AccountActivity aa= new AccountActivity ();
 		me.DisplaymainMenu();
 		
 		
@@ -21,7 +27,7 @@ public class Java_Bank {
 			if (Menu.returned == 1) {
 				System.out.print("Enter New Username: ");
 				userName = console.nextLine();
-				user.setUserName(userName);
+				//user.setUserName(userName);
 				System.out.print("Enter New Password: ");
 				passWord = console.nextLine();
 				//user.setUserName(userName);
@@ -33,7 +39,7 @@ public class Java_Bank {
 			if (Menu.returned == 2) {
 				System.out.print("Enter New Username: ");
 				userName = console.nextLine();
-				user.setUserName(userName);
+				//user.setUserName(userName);
 				System.out.print("Enter New Password: ");
 				passWord = console.nextLine();
 				//user.setUserName(userName);
@@ -42,21 +48,60 @@ public class Java_Bank {
 				if (UserValidation.validation == true) {
 					System.out.println ("Log In Successful");
 					me.DisplayUserMenu();
-				}else
-					System.out.println ("Log In FAIL !!!"); 
-					me.DisplaymainMenu();
+				 
+			
 					if (Menu.returned == 3) {
-						System.out.println ("GOOD BYE");}
+						System.out.println ("GOOD BYE");
+					}
+				
+					if (Menu.returned == 4);{
+						aa.viewBalance(userName);
+					}
+					
+					if(Menu.returned == 5) {
+						aa.deposit(userName);
+						break;
+					}
+					
+					if(Menu.returned == 6) {
+						aa.withdraw(userName);
+						break;
+					}
+					
+					if(Menu.returned == 7) {
+						
+						System.out.println("Please select account type: 1 -- Checking  ||  2 -- Saving");
+						choice = console.nextInt();
+						if (choice == 1) {
+							setAccountType = "CHKG";
+						}
+						else if (choice == 2) {
+							setAccountType = "SVNG";
+						}
+						na.addAccount(setAccountType, userName);
+					}
+					
+					if(Menu.returned == 8) {
+						ao.addOwner(userName, passWord);
+					}
+					
+					if(Menu.returned == 9) {
+						clacct.closeAccount(userName, passWord);
+					}
+					
+				}
+				else
+					System.out.println ("Log In FAIL !!!"); 
 					break;
 			}
 			
-			if (Menu.returned == 7) {
+			if (Menu.returned == 10) {
 				me.DisplaymainMenu();
 			}
 			
 			if (Menu.returned == 3) {
 				System.out.println ("GOOD BYE");
-				break;
+				
 			}
 			
 			else 
@@ -64,7 +109,8 @@ public class Java_Bank {
 				me.DisplayUserMenu();
 			
 		}
-		console.close();
+			console.close();
 	}
-
 }
+			
+

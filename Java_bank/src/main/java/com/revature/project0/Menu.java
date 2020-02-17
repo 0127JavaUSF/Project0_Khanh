@@ -96,54 +96,89 @@ public class Menu {
 		
 		switch (option) {
 		
+		case "V":
+			if (option.equals("V")) {
+				returned = 4;
+			}
+		break;
+		
+		case "v":
+			if (option.equals("v")) {
+				returned = 4;
+			}
+		break;
+		
+		case "D":
+			if (option.equals("D")) {
+				returned = 5;
+			}
+		break;
+		
+		case "d":
+			if (option.equals("d")) {
+				returned = 5;
+			}
+		break;
+		
+		case "W":
+			if (option.equals("W")) {
+				returned = 6;
+			}
+		break;
+		
+		case "w":
+			if (option.equals("w")) {
+				returned = 6;
+			}
+		break;
+		
 		case "N":
 			if (option.equals("N")) {
-				returned = 4;
+				returned = 7;
 			}
 		break;
 		
 		case "n":
 			if (option.equals("n")) {
-				returned = 4;
+				returned = 7;
 			}
 		break;
 		
 		case "A":
 			if (option.equals("A")) {
-				returned = 5;
+				returned = 8;
 			}
 		break;
 		
 		case "a":
 			if (option.equals("a")) {
-				returned = 5;
+				returned = 8;
 			}
 		break;
 		
 		case "C":
 			if (option.equals("C")) {
-				returned = 6;
+				returned = 9;
 			}
 		break;
 		
 		case "c":
 			if (option.equals("c")) {
-				returned = 6;
+				returned = 9;
 			}
 		break;
 		
 		case "R":
 			if (option.equals("R")) {
-				returned = 7;
+				returned = 10;
 			}
 		break;
 		
 		case "r":
 			if (option.equals("r")) {
-				returned = 7;
+				returned = 10;
 			}
 		break;
-		
 		default:
 			System.out.println ("Invalid Entry !!!");
 		break;
